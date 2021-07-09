@@ -1,3 +1,5 @@
-from django.shortcuts import render
+from django.http
+from django.http.response import HttpResponse from HttpResponse
 
-# Create your views here.
+def index(request):
+    return HttpResponse("로그인 아이디와 패스워드를 확인해주세요.")
