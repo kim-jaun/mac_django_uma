@@ -1,4 +1,12 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Question
+
+
 
 def index(request):
-    return HttpResponse("로그인 아이디와 패스워드를 확인해주세요.")
+    """
+    login 모델 출력
+    """
+    question_list = Question.objects.order_by('-create_date')
+    context = {'question_list': question_list}
+    return render(request, 'login/question_list.html', context)
